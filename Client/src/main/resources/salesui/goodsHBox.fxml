@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="60.0" prefWidth="414.0" spacing="10" translateX="5" translateY="10" type="HBox" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="id" prefHeight="19.0" prefWidth="52.0" text="13" textFill="#78909c" translateY="12">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font></Label>
+    <VBox prefHeight="60.0" prefWidth="119.0" spacing="8">
+        <Label fx:id="name" text="name" textFill="#1ba3dd">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <HBox spacing="10">
+            <MaterialDesignIconView fx:id="icon" glyphName="ACCOUNT" size="1.5em" style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)" />
+            <Label text="单价" translateY="2">
+                <font>
+                    <Font size="10.0" />
+                </font></Label>
+            <Label fx:id="price" translateY="2">
+                <font>
+                    <Font size="12.0" />
+                </font></Label>
+        </HBox>
+    </VBox>
+   <VBox prefHeight="60.0" prefWidth="174.0" spacing="5" translateY="-4">
+      <children>
+         <Label fx:id="type" prefHeight="23.0" prefWidth="100.0" text="Detail" />
+         <HBox prefHeight="18.0" prefWidth="65.0" spacing="10">
+            <children>
+               <MaterialDesignIconView fx:id="icon1" glyphName="ACCOUNT" size="1.5em" style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)" />
+               <Label text="剩余数量" translateY="2">
+                  <font>
+                     <Font size="10.0" />
+                  </font>
+               </Label>
+               <Label fx:id="num" translateY="2">
+                  <font>
+                     <Font size="12.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+
+</fx:root>

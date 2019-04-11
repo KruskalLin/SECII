@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import ui.managerui.promotionui.PromotionChangePaneLabel?>
+<?import ui.managerui.checkui.CheckChangePaneLabel?>
+<?import ui.common.MyTopBar?>
+<?import ui.managerui.businessConditionui.BusinessConditionChangePaneLabel?>
+<?import ui.managerui.businessProgressui.BusinessProgressChangePaneLabel?>
+<?import ui.managerui.businessSalesDetail.BusinessSalesDetailChangePaneLabel?>
+<?import ui.inventoryui.myGoodsClassificationUI.MyGoodsClassificationPane?>
+<?import ui.inventoryui.myGoodsClassificationUI.MyGoodsClassificationChangePaneLabel?>
+<?import ui.common.NavigationListView?>
+<AnchorPane fx:id="mainpane"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.common.RespectiveMainUIControlelr"
+            prefHeight="600" prefWidth="800"
+            stylesheets="@../css/tempInNeed.css">
+    <!--<AnchorPane fx:id="mainAnchorPane" prefHeight="600" prefWidth="800">-->
+
+        <AnchorPane fx:id="logopane" prefHeight="40" prefWidth="160" style="-fx-background-color: white">
+            <ImageView fitHeight="52.0" fitWidth="98.0" layoutX="24.0" layoutY="2.0"
+                       pickOnBounds="true" preserveRatio="true">
+                <Image url="@../default/logo.jpg"/>
+            </ImageView>
+        </AnchorPane>
+
+        <MyTopBar fx:id="bar" layoutX="160"/>
+
+        <fx:include source="/util/board.fxml" fx:id="board" layoutX="160" layoutY="40"/> <!--为什么报错？-->
+
+        <NavigationListView fx:id="navigation" layoutY="40" prefHeight="560" prefWidth="160">
+            <CheckChangePaneLabel fx:id="checkList" text="审批单据" style="-fx-padding: 8 0 8 10;">
+                <graphic>
+                    <StackPane style="-fx-padding: 0 10 0 0;">
+                        <FontAwesomeIconView fx:id="ckeckListIcon" size="1em"/>
+                    </StackPane>
+                </graphic>
+            </CheckChangePaneLabel>
+            <PromotionChangePaneLabel fx:id="promotionList" text="促销策略" style="-fx-padding: 8 0 8 10;">
+                <graphic>
+                    <StackPane style="-fx-padding: 0 10 0 0;">
+                        <FontAwesomeIconView fx:id="promotionListIcon" size="1em"/>
+                    </StackPane>
+                </graphic>
+            </PromotionChangePaneLabel>
+            <BusinessConditionChangePaneLabel fx:id="businessConditionList" text="经营情况表" style="-fx-padding: 8 0 8 10;">
+                <graphic>
+                    <StackPane style="-fx-padding: 0 10 0 0;">
+                        <FontAwesomeIconView fx:id="businessConditionListIcon" size="1em"/>
+                    </StackPane>
+                </graphic>
+            </BusinessConditionChangePaneLabel>
+            <BusinessProgressChangePaneLabel fx:id="businessProgressList" text="经营历程表" style="-fx-padding: 8 0 8 10;">
+                <graphic>
+                    <StackPane style="-fx-padding: 0 10 0 0;">
+                        <FontAwesomeIconView fx:id="businessProgressListIcon" size="1em"/>
+                    </StackPane>
+                </graphic>
+            </BusinessProgressChangePaneLabel>
+            <BusinessSalesDetailChangePaneLabel fx:id="businessSalesDetailList" text="销售明细" style="-fx-padding: 8 0 8 10;">
+                <graphic>
+                    <StackPane style="-fx-padding: 0 10 0 0;">
+                        <FontAwesomeIconView fx:id="businessSalesDetailListIcon" size="1em"/>
+                    </StackPane>
+                </graphic>
+            </BusinessSalesDetailChangePaneLabel>
+            <!--<MyGoodsClassificationChangePaneLabel fx:id="myGoodsClassificationList" text="商品" style="-fx-padding: 8 0 8 10;">-->
+                <!--<graphic>-->
+                    <!--<StackPane style="-fx-padding: 0 10 0 0;">-->
+                        <!--<FontAwesomeIconView fx:id="myGoodsClassificationListIcon" size="1em"/>-->
+                    <!--</StackPane>-->
+                <!--</graphic>-->
+            <!--</MyGoodsClassificationChangePaneLabel>-->
+
+        </NavigationListView>
+
+    <!--</AnchorPane>-->
+</AnchorPane>

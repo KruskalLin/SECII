@@ -1,0 +1,233 @@
+#mainpane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+#mainAnchorPane {
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-effect: dropshadow(gaussian, grey, 10, 0.1, 0, 0);
+}
+
+#logopane {
+    -fx-border-radius: 10 0 0 0;
+    -fx-background-radius: 10 0 0 0;
+}
+
+#bar {
+    -fx-border-radius: 0 10 0 0;
+    -fx-background-radius: 0 10 0 0;
+    -fx-background-color: rgb(254, 254, 254);
+}
+
+.board {
+    -fx-background-color: rgb(244, 247, 249);
+    -fx-background-radius: 0 0 10 0;
+    -fx-border-radius: 0 0 10 0;
+}
+
+#navigation {
+    -fx-border-radius: 0 0 0 10;
+    -fx-background-radius: 0 0 0 10;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-effect: dropshadow(one-pass-box, rgba(182, 182, 182, 0.18), 30, 0.01, 10, 10);
+}
+
+#navigation .list-cell {
+    -fx-background-radius: 5px;
+    -fx-background-insets: 2;
+    -fx-padding: 10;
+}
+
+/* TODO selected和focused还没看出什么区别 */
+#navigation .list-cell:selected {
+    /*-fx-cell-hover-color: #0093ff;*/
+    -fx-background-color: #eff8ff;
+}
+
+#navigation .list-cell:filled:selected:focused .label {
+    -fx-text-fill: #3983D7;
+}
+
+#filter {
+    -fx-background-color: linear-gradient(to bottom right, rgba(140, 162, 246, 0.5), rgba(101, 158, 251, 0.5));
+    -fx-text-fill: white;
+}
+
+#initialaccount {
+    -fx-background-color: linear-gradient(to bottom right, rgba(140, 162, 246, 0.5), rgba(101, 158, 251, 0.5));
+    -fx-text-fill: white;
+}
+
+#add {
+    -fx-background-color: linear-gradient(to bottom right, #8CA2F6, #659EFB);
+    -fx-text-fill: white;
+}
+
+#delete {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
+
+/*#navigation .list-cell:filled:selected:focused #supervisionicon, #navigation .list-cell:filled:selected:focused #userlisticon {*/
+/*-fx-fill: #3983D7;*/
+/*}*/
+
+.tree-table-view {
+    -fx-background-color: rgb(254, 254, 254);
+    -fx-effect: dropshadow(one-pass-box, rgba(182, 182, 182, 0.18), 30, 0.1, 0, 0);
+}
+
+.tree-table-view .column-header {
+    -fx-border-width: 0;
+    -fx-background-color: rgb(234, 238, 240);
+}
+
+/* 我还以为旁边的scrollbar是怎么去掉的呢，原来就是让主面短一点，下面够放就不需要scrollbar了呃 */
+.tree-table-view .column-header .label {
+    -fx-padding: 8 0 8 0;
+    -fx-text-fill: rgb(120, 144, 156);
+}
+
+.tree-table-view .tree-table-row-cell {
+    -fx-background-color: white;
+}
+
+.defaultTreeTableSelectRow .tree-table-row-cell:selected {
+    -fx-background-color: #03A9F4;
+}
+.tree-table-view:focused .tree-table-row-cell:selected {
+    -fx-effect: dropshadow(one-pass-box, #999999, 30, 0.01, 0, 0);
+    /*-fx-background-radius: 1.4;*/
+}
+
+/* You can control the actual button sizes here */
+.pagination > .pagination-control > .control-box > .number-button,
+.pagination > .pagination-control > .control-box > .bullet-button,
+.pagination > .pagination-control > .control-box > .left-arrow-button,
+.pagination > .pagination-control > .control-box > .right-arrow-button {
+    -fx-background-insets: 0, 1;
+    -fx-background-color: lightgray, #FAFAFA;
+    -fx-min-width: 20;
+    -fx-min-height: 20;
+}
+
+/* Colors on hover */
+.pagination > .pagination-control > .control-box > .number-button:hover,
+.pagination > .pagination-control > .control-box > .bullet-button:hover,
+.pagination > .pagination-control > .control-box > .left-arrow-button:hover,
+.pagination > .pagination-control > .control-box > .right-arrow-button:hover {
+    -fx-background-insets: 0;
+    -fx-background-color: lightgray;
+}
+
+/* Selected toggle color */
+.pagination > .pagination-control > .control-box > .number-button:selected,
+.pagination > .pagination-control > .control-box > .bullet-button:selected {
+    -fx-background-insets: 0;
+    -fx-background-color: #8CA2F6;
+    -fx-text-fill: white;
+}
+
+#infoScrollPane > .viewport {
+    -fx-background-color: transparent;
+}
+#infoScrollPane {
+    -fx-border-width: 0;
+    -fx-background-color: rgb(244, 247, 249);
+    -fx-background-radius: 0 0 10 0;
+    -fx-border-radius: 0 0 10 0;
+}
+
+#infoPane {
+    -fx-border-width: 1;
+    -fx-border-color: #CFD2D4;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 0 0 10 0;
+    -fx-border-radius: 0 0 10 0;
+    -fx-effect: dropshadow(one-pass-box, rgba(182, 182, 182, 0.18), 30, 0.3, 0, 0);
+}
+
+#infoGridPane .label {
+    -fx-text-fill: #78909c;
+    /*-fx-row-valignment: bottom;*/
+    /*-fx-alignment: bottom-left;*/
+}
+
+
+
+/*#labellist{*/
+/*-fx-background-color: derive(#CFD2D4, 10%);*/
+/*}*/
+
+/*#mylistview{*/
+/*-fx-border-color: silver;*/
+/*}*/
+
+/* 下面这5个应该是本来想要这么style的后来不需要的吧 */
+
+/*The main scrollbar CSS class of ListView*/
+/*.tree-table-view .scroll-bar:horizontal,*/
+/*.tree-table-view .scroll-bar:vertical {*/
+/*-fx-background-color: transparent;*/
+/*}*/
+
+/*The increment and decrement button CSS class of scrollbar*/
+/*.tree-table-view .increment-button, .tree-table-view .decrement-button {*/
+/*-fx-background-color-color: derive(rgba(0, 85, 128, 0.44), 80%);*/
+/*}*/
+
+ /*The main scrollbar **track** CSS class  */
+/*.tree-table-view .scroll-bar:horizontal .track,*/
+/*.tree-table-view .scroll-bar:vertical .track {*/
+/*-fx-background-color: transparent;*/
+/*-fx-border-color: transparent;*/
+/*-fx-background-radius: 0em;*/
+/*}*/
+
+ /*The main scrollbar **thumb** CSS class which we drag every time (movable) */
+/*.tree-table-view .scroll-bar:horizontal .thumb,*/
+/*.tree-table-view .scroll-bar:vertical .thumb {*/
+/*-fx-background-color: linear-gradient(to bottom right, rgba(140, 162, 246, 0.70), rgba(101, 158, 251, 0.70));*/
+/*-fx-background-insets: 0, 0, 0;*/
+/*-fx-background-radius: 0em;*/
+/*}*/
+
+/*.tree-table-view .scroll-bar {*/
+/*-fx-padding: 0;*/
+/*}*/
+
+/*.tree-table-view .column-header,*/
+/*.tree-table-view .column-header-background,*/
+/*.tree-table-view .column-header-background .filler {*/
+/*-fx-background-color: TRANSPARENT;*/
+/*-fx-border-color: transparent;*/
+/*}*/
+
+/*.tree-table-view .tree-table-cell {*/
+/*-fx-border-width: 0 0 0 0;*/
+/*-fx-alignment: top-center;*/
+/*}*/
+
+/*.tree-table-view .column-resize-line, .tree-table-view .column-drag-header {*/
+/*-fx-background-color: -fx-tree-table-rippler-color;*/
+/*}*/
+
+/*.tree-table-view .scroll-bar:horizontal {*/
+/*-fx-border-color: transparent;*/
+/*}*/
+
+/*.tree-table-row-cell .jfx-text-field {*/
+/*-fx-focus-color: rgb(82, 100, 174);*/
+/*}*/
+
+/*.tree-table-view .menu-item:focused {*/
+/*-fx-background-color: -fx-tree-table-color;*/
+/*}*/
+
+/*.tree-table-view .menu-item .label {*/
+/*-fx-padding: 5 0 5 0;*/
+/*}*/
+

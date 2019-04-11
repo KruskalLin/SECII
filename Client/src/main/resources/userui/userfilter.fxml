@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="262.0" prefWidth="231.0" stylesheets="@../css/filter.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <JFXButton fx:id="save" layoutX="51.0" layoutY="225.0" onMouseClicked="#save" style="-fx-background-color: #03A9F4" text="保存" textFill="WHITE" />
+      <JFXDatePicker fx:id="to" defaultColor="#004d8f" layoutX="77.0" layoutY="95.0" prefHeight="23.0" prefWidth="133.0" />
+      <JFXButton fx:id="cancel" layoutX="134.0" layoutY="225.0" onMouseClicked="#cancel" text="取消" />
+      <JFXDatePicker fx:id="from" defaultColor="#008f37" layoutX="77.0" layoutY="54.0" prefHeight="23.0" prefWidth="133.0" />
+      <Label layoutX="11.0" layoutY="14.0" prefHeight="23.0" prefWidth="80.0" text="创造时间">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="58.0" text="起始:" textFill="#a1adbc" />
+      <Label layoutX="35.0" layoutY="101.0" text="截止:" textFill="#a1adbc" />
+      <Separator layoutX="16.0" layoutY="130.0" prefWidth="200.0" />
+      <Label layoutX="17.0" layoutY="139.0" prefHeight="23.0" prefWidth="80.0" text="用户类型">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="state" layoutX="34.0" layoutY="176.0" prefHeight="23.0" prefWidth="162.0" promptText="选择">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <Label fx:id="UserManager">
+                      用户管理员
+                      <graphic>
+                          <StackPane styleClass="custom-jfx-list-view-icon-container">
+                              <MaterialDesignIconView glyphName="ACCOUNT" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                          </StackPane>
+                      </graphic>
+                  </Label>
+                  <Label fx:id="Salesman">
+                      销售员
+                      <graphic>
+                          <StackPane styleClass="custom-jfx-list-view-icon-container">
+                              <MaterialIconView glyphName="REMOVE" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                          </StackPane>
+                      </graphic>
+                  </Label>
+                  <Label fx:id="SalesManager">
+                      销售经理
+                      <graphic>
+                          <StackPane styleClass="custom-jfx-list-view-icon-container">
+                              <MaterialDesignIconView glyphName="PEN" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                          </StackPane>
+                      </graphic>
+                  </Label>
+                  <Label fx:id="GeneralManager">
+                      总经理
+                      <graphic>
+                          <StackPane styleClass="custom-jfx-list-view-icon-container">
+                              <MaterialDesignIconView glyphName="MARKER_CHECK" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                          </StackPane>
+                      </graphic>
+                  </Label>
+                  <Label fx:id="Accountant">
+                      财务人员
+                      <graphic>
+                          <StackPane styleClass="custom-jfx-list-view-icon-container">
+                              <MaterialDesignIconView glyphName="ASSISTANT" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                          </StackPane>
+                      </graphic>
+                  </Label>
+                  <Label fx:id="InventoryManager">
+                      库存管理人员
+                      <graphic>
+                          <StackPane styleClass="custom-jfx-list-view-icon-container">
+                              <MaterialDesignIconView glyphName="ANDROID" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                          </StackPane>
+                      </graphic>
+                  </Label>
+              </FXCollections>
+          </items>
+      </JFXComboBox>
+
+    </children>
+</fx:root>

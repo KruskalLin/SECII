@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import ui.managerui.promotionui.PromotionChangePaneLabel?>
+<?import ui.managerui.checkui.CheckChangePaneLabel?>
+<?import ui.common.MyTopBar?>
+<?import ui.managerui.businessConditionui.BusinessConditionChangePaneLabel?>
+<?import ui.managerui.businessProgressui.BusinessProgressChangePaneLabel?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<AnchorPane fx:id="mainpane"
+           xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="ui.salesui.SalesUIController"
+           prefHeight="600" prefWidth="800"
+           stylesheets="@../css/tempInNeed.css">
+
+        <AnchorPane fx:id="logopane" prefHeight="40" prefWidth="160" style="-fx-background-color: white">
+            <ImageView fitHeight="52.0" fitWidth="98.0" layoutX="24.0" layoutY="2.0"
+                       pickOnBounds="true" preserveRatio="true">
+                <Image url="@../default/logo.jpg"/>
+            </ImageView>
+        </AnchorPane>
+
+        <MyTopBar fx:id="bar" layoutX="160"/>
+
+        <fx:include source="/util/board.fxml" fx:id="board" layoutX="160" layoutY="40"/> <!--为什么报错？-->
+
+        <JFXListView fx:id="navigation" layoutY="40" prefHeight="560" prefWidth="160">
+            <HBox fx:id="member">
+                <Label>
+                    <padding><Insets bottom="8" left="5" top="8" /></padding>
+                    Member
+                    <graphic>
+                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                            <MaterialDesignIconView glyphName="ACCOUNT" size="1.5em" style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                        </StackPane>
+                    </graphic>
+                </Label>
+            </HBox>
+            <HBox fx:id="receipt">
+                <Label>
+                    <padding><Insets bottom="8" left="5" top="8" /></padding>
+                    Receipt
+                    <graphic>
+                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                            <MaterialDesignIconView glyphName="RECEIPT" size="1.5em" style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                        </StackPane>
+                    </graphic>
+                </Label>
+            </HBox>
+            <HBox fx:id="stockpur"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>StockPurReceipt</Label></HBox>
+            <HBox fx:id="stockret"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>StockRetReceipt</Label></HBox>
+            <HBox fx:id="salessell"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>SalesSellReceipt</Label></HBox>
+            <HBox fx:id="salesret"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>SalesRetReceipt</Label></HBox>
+
+        </JFXListView>
+
+    </AnchorPane>
+

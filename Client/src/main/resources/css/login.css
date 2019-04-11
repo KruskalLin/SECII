@@ -1,0 +1,19 @@
+#pane{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(one-pass-box,#999999, 10, 0.1,0,0);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+#login{
+    -fx-background-color: linear-gradient(to bottom right, #8CA2F6,#659EFB);
+    -fx-effect: dropshadow(gaussian, #659EF0, 10, 0.05,0,5);
+
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+
+#mainPane{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}

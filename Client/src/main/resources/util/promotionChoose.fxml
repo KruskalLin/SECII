@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import ui.util.IconButton?>
+
+<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<IconButton layoutX="31.0" layoutY="63.0" prefHeight="74.0" prefWidth="74.0" />
+    <IconButton layoutX="150.0" layoutY="70.0" prefHeight="61.0" prefWidth="53.0" />
+    <IconButton />
+</AnchorPane>

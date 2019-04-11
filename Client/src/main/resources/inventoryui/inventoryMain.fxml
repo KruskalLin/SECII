@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<?import ui.common.MyTopBar?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.HBox?>
+<?import ui.common.MyTopBar?>
+<AnchorPane fx:id="mainAnchorpane" fx:controller="ui.inventoryui.InventoryUIController"
+           stylesheets="@../css/tempInNeed.css" xmlns="http://javafx.com/javafx/8.0.121"
+           xmlns:fx="http://javafx.com/fxml/1">
+    <!--<AnchorPane fx:id="back" prefHeight="600.0" prefWidth="800.0">-->
+        <children>
+
+            <MyTopBar fx:id="bar" layoutX="160"/>
+            <fx:include fx:id="board" source="../util/board.fxml" layoutX="160" layoutY="40"/>
+
+
+            <JFXListView fx:id="navigation" layoutY="40.0" prefHeight="560.0" prefWidth="160.0">
+                <HBox fx:id="goodsClassification">
+                    <Label>
+                        <padding>
+                            <Insets bottom="8" left="5" top="8"/>
+                        </padding>
+                        商品分类
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <MaterialDesignIconView glyphName="ACCOUNT" size="1.5em"
+                                                        style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                            </StackPane>
+                        </graphic>
+                    </Label>
+                </HBox>
+                <HBox fx:id="goods">
+                    <Label>
+                        <padding>
+                            <Insets bottom="8" left="5" top="8"/>
+                        </padding>
+                        商品管理
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <MaterialDesignIconView glyphName="ACCOUNT" size="1.5em"
+                                                        style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                            </StackPane>
+                        </graphic>
+                    </Label>
+                </HBox>
+                <HBox fx:id="inventoryView">
+                    <Label>
+                        <padding>
+                            <Insets bottom="8" left="5" top="8"/>
+                        </padding>
+                        库存查看
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <MaterialDesignIconView glyphName="ACCOUNT" size="1.5em"
+                                                        style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                            </StackPane>
+                        </graphic>
+                    </Label>
+                </HBox>
+                <HBox fx:id="inventoryCheck">
+                    <Label>
+                        <padding>
+                            <Insets bottom="8" left="5" top="8"/>
+                        </padding>
+                        库存盘点
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <MaterialDesignIconView glyphName="ACCOUNT" size="1.5em"
+                                                        style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                            </StackPane>
+                        </graphic>
+                    </Label>
+                </HBox>
+                <HBox fx:id="receipt">
+                    <Label>
+                        <padding>
+                            <Insets bottom="8" left="5" top="8"/>
+                        </padding>
+                        单据
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <MaterialDesignIconView glyphName="RECEIPT" size="1.5em"
+                                                        style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                            </StackPane>
+                        </graphic>
+                    </Label>
+                </HBox>
+                <HBox fx:id="inventoryGift">
+                    <padding>
+                        <Insets bottom="8" left="18" top="8"/>
+                    </padding>
+                    <Label>库存赠送单</Label>
+                </HBox>
+                <HBox fx:id="inventoryDamage">
+                    <padding>
+                        <Insets bottom="8" left="18" top="8"/>
+                    </padding>
+                    <Label>库存报损单</Label>
+                </HBox>
+                <HBox fx:id="inventoryOverflow">
+                    <padding>
+                        <Insets bottom="8" left="18" top="8"/>
+                    </padding>
+                    <Label>库存报溢单</Label>
+                </HBox>
+                <HBox fx:id="inventoryWarning">
+                    <padding>
+                        <Insets bottom="8" left="18" top="8"/>
+                    </padding>
+                    <Label>库存报警单</Label>
+                </HBox>
+
+            </JFXListView>
+
+            <AnchorPane fx:id="logopane" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: white">
+                <children>
+                    <ImageView fitHeight="52.0" fitWidth="98.0" layoutX="24.0" layoutY="2.0" pickOnBounds="true"
+                               preserveRatio="true">
+                        <image>
+                            <Image url="@../default/logo.jpg"/>
+                        </image>
+                    </ImageView>
+                </children>
+            </AnchorPane>
+        </children>
+    <!--</AnchorPane>-->
+</AnchorPane>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root prefHeight="154.0" prefWidth="150.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <JFXSpinner layoutX="14.0" layoutY="14.0" />
+        <Label layoutX="4.0" layoutY="101.0" text="请稍等......"/>
+    </children>
+</fx:root>

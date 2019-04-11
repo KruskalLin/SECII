@@ -1,0 +1,13 @@
+.icons-badge .badge-pane {
+    -fx-background-color: #03A9F4;
+    -fx-background-radius: 15;
+    -fx-pref-width: 15;
+    -fx-pref-height: 15;
+    -fx-alignment: center;
+}
+
+.icons-badge .label {
+    -fx-font-weight: BOLD;
+    -fx-font-size: 10.0px;
+    -fx-text-fill: WHITE;
+}

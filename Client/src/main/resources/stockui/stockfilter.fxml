@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root prefHeight="151.0" prefWidth="143.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <JFXButton fx:id="save" layoutX="49.0" layoutY="119.0" onMouseClicked="#save" style="-fx-background-color: #03A9F4" text="Save" textFill="WHITE" />
+      <JFXCheckBox fx:id="approved" layoutX="33.0" layoutY="35.0" text="Approved" />
+      <JFXCheckBox fx:id="draft" layoutX="33.0" layoutY="10.0" text="Draft" />
+      <JFXCheckBox fx:id="rejected" layoutX="33.0" layoutY="60.0" text="Rejected" />
+      <JFXCheckBox fx:id="pending" layoutX="33.0" layoutY="85.0" text="Pending" />
+
+    </children>
+</fx:root>

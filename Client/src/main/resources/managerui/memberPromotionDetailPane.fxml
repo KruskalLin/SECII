@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import ui.managerui.promotionui.GoodsTreeTable?>
+<fx:root type="AnchorPane" fx:id="memberPromotionDetailPane" stylesheets="@../css/receipt.css"
+         xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         prefHeight="560.0" prefWidth="640.0">
+    <Label text="会员促销策略" layoutX="25" layoutY="12">
+        <font>
+            <Font size="24"/>
+        </font>
+    </Label>
+    <Separator layoutY="44" prefWidth="640"/>
+    <JFXButton fx:id="reset" text="重置" layoutX="470" layoutY="17"
+               style="-fx-text-fill: white;-fx-background-color: #03A9F4;"
+               mnemonicParsing="false" onMouseClicked="#reset">
+        <font>
+            <Font size="12.0"/>
+        </font>
+    </JFXButton>
+    <JFXButton fx:id="saveAsDraft" text="存稿" layoutX="517" layoutY="17"
+               style="-fx-text-fill: white;-fx-background-color: #03A9F4;"
+               mnemonicParsing="false" onMouseClicked="#saveAsDraft">
+        <font>
+            <Font size="12.0"/>
+        </font>
+    </JFXButton>
+    <JFXButton fx:id="save" text="保存" layoutX="564.0" layoutY="17.0"
+               mnemonicParsing="false" onMouseClicked="#save">
+        <font>
+            <Font size="12.0"/>
+        </font>
+    </JFXButton>
+
+    <!--<ScrollPane id="infoScrollPane" layoutY="58" prefWidth="640" prefViewportHeight="502" prefHeight="502">-->
+    <AnchorPane fx:id="pane" layoutX="124.0" layoutY="56.0" prefHeight="287.0" prefWidth="385.0">
+        <!--<StackPane id="infoPane" layoutX="93" layoutY="20" prefWidth="400" style="-fx-padding: 6 12 26 12;">-->
+        <!--<GridPane id="infoGridPane" prefWidth="400">-->
+        <!--<columnConstraints>-->
+        <!--<ColumnConstraints prefWidth="150"/>-->
+        <!--<ColumnConstraints prefWidth="100"/> &lt;!&ndash; 可能会有问题，minHeight和hgrow="SOMETIMES"&ndash;&gt;-->
+        <!--<ColumnConstraints prefWidth="150"/>-->
+        <!--</columnConstraints>-->
+        <!--<rowConstraints>-->
+        <!--<RowConstraints prefHeight="30"/>-->
+        <!--<RowConstraints prefHeight="30"/>-->
+        <!--<RowConstraints prefHeight="30"/>-->
+        <!--<RowConstraints prefHeight="30"/>-->
+        <!--<RowConstraints prefHeight="30"/>-->
+        <!--<RowConstraints prefHeight="30"/>-->
+        <!--<RowConstraints prefHeight="30"/>-->
+        <!--</rowConstraints>-->
+
+        <!--<Label text="编号" GridPane.valignment="BOTTOM"/>-->
+        <!--<TextField id="idField" GridPane.rowIndex="1"/>-->
+
+        <!--<Label text="开始时间" GridPane.rowIndex="2"-->
+        <!--GridPane.valignment="BOTTOM"/> &lt;!&ndash; TODO DatePicker要改的很多，最起码大小要改。要用JFXDatePicker吗？… &ndash;&gt;-->
+        <!--<DatePicker fx:id="beginTimeField" GridPane.rowIndex="3"/>-->
+
+        <!--<Label text="结束时间" GridPane.rowIndex="2" GridPane.columnIndex="2"/>-->
+        <!--<DatePicker fx:id="endTimeField" GridPane.rowIndex="3" GridPane.columnIndex="2"/>-->
+
+        <!--<Label text="针对会员等级" GridPane.rowIndex="4" GridPane.valignment="BOTTOM"/>-->
+        <!--<Slider fx:id="requiredLevelSlider" GridPane.rowIndex="5"/>-->
+
+        <!--<Label text="触发总价（可选）" GridPane.rowIndex="4" GridPane.columnIndex="2" GridPane.valignment="BOTTOM"/>-->
+        <!--<TextField fx:id="requireTotalField" GridPane.rowIndex="5" GridPane.columnIndex="2"/>-->
+
+        <!--<Label text="折让" GridPane.rowIndex="6" GridPane.valignment="BOTTOM"/>-->
+        <!--<TextField fx:id="discountField" GridPane.rowIndex="7"/>-->
+
+        <!--<Label text="代金劵金额" GridPane.rowIndex="6" GridPane.columnIndex="2" GridPane.valignment="BOTTOM"/>-->
+        <!--<TextField fx:id="tokenAmount" GridPane.rowIndex="7" GridPane.columnIndex="2"/>-->
+
+        <!--</GridPane>-->
+        <!--</StackPane>-->
+
+        <!--<Label text="赠品列表" layoutX="93" layoutY="330"/>-->
+
+        <!--<JFXButton layoutX="450" layoutY="320">-->
+        <!--<graphic>-->
+        <!--<StackPane>-->
+        <!--<MaterialDesignIconView glyphName="PLUS" size="2em"/>-->
+        <!--</StackPane>-->
+        <!--</graphic>-->
+        <!--</JFXButton>-->
+
+        <!--<StackPane fx:id="giftsPane" layoutX="93" layoutY="360" prefWidth="400" style="-fx-padding: 6 12 26 12;"/>-->
+
+        <!--<JFXButton fx:id="delete" text="删除" layoutX="470"-->
+        <!--mnemonicParsing="false" onMouseClicked="#delete"/>-->
+        <Label layoutX="22.0" layoutY="20.0" text="促销信息">
+            <font>
+                <Font name="Arial" size="24.0"/>
+            </font>
+        </Label>
+        <Label layoutX="22.0" layoutY="48.0" text="基本信息" textFill="#a1adbc">
+            <font>
+                <Font size="12.0"/>
+            </font>
+        </Label>
+
+        <JFXButton fx:id="modify" layoutX="246.0" layoutY="18.0" onMouseClicked="#modify">
+            <graphic>
+                <StackPane style="-fx-padding: 1;">
+                    <MaterialDesignIconView fx:id="pen" glyphName="PENCIL" size="1.5em"/>
+                </StackPane>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="delete" text="删除"
+                   layoutX="297.0" layoutY="18.0" prefHeight="28.0"
+                   mnemonicParsing="false" onMouseClicked="#delete">
+            <graphic>
+                <StackPane>
+                    <MaterialDesignIconView fill="white" glyphName="DELETE" size="1em"/>
+                </StackPane>
+            </graphic>
+        </JFXButton>
+        <Label layoutX="22.0" layoutY="73.0" text="编号" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Label fx:id="idLabel" layoutX="19.0" layoutY="97.0"/>
+
+        <Label layoutX="232.0" layoutY="73.0" text="会员等级" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <JFXSlider fx:id="requiredLevelSlider" layoutX="232.0" layoutY="97.0" prefWidth="80" min="1" max="5"/>
+        <!--<JFXTextField fx:id="requiredLevelField" layoutX="242.0" layoutY="93.0" prefWidth="50"/>-->
+
+        <Label layoutX="320.0" layoutY="73.0" text="折让" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="discountField" layoutX="320.0" layoutY="93.0" prefWidth="50"/>
+
+        <Label layoutX="19.0" layoutY="131.0" text="开始时间" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <JFXDatePicker fx:id="beginTimePicker" layoutX="19.0" layoutY="150.0" prefHeight="4.0" prefWidth="114"/>
+
+        <Label layoutX="155.0" layoutY="131.0" text="结束时间" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <JFXDatePicker fx:id="endTimePicker" layoutX="155.0" layoutY="150.0" prefHeight="4.0" prefWidth="114.0"/>
+
+        <Label layoutX="281.0" layoutY="131.0" text="赠送代金券金额" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="tokenField" layoutX="281.0" layoutY="150.0" prefHeight="26.0" prefWidth="64.0"/>
+        <Label layoutX="352.0" layoutY="157.0" text="元" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+
+        <Label layoutX="21.0" layoutY="194.0" text="备注" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <TextArea fx:id="commentArea" layoutX="17.0" layoutY="213.0" prefHeight="53.0" prefWidth="361.0"
+                  wrapText="true"/>
+    </AnchorPane>
+
+    <Label layoutX="124.0" layoutY="350.0" text="赠品列表">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Label>
+    <JFXRippler fx:id="add" layoutX="500" layoutY="350"
+                ripplerFill="#03A9F4" maskType="CIRCLE" position="BACK"
+                onMouseClicked="#addGift">
+        <StackPane style="-fx-padding: 8;">
+            <MaterialDesignIconView glyphName="PLUS" size="1.5em"/>
+        </StackPane>
+    </JFXRippler>
+    <GoodsTreeTable fx:id="goodsTreeTable" layoutX="124" layoutY="380" prefHeight="170"/>
+
+    <!--</ScrollPane>-->
+
+
+</fx:root>

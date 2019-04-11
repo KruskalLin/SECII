@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import ui.common.MyTopBar?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import ui.common.MyTopBar?>
+
+<AnchorPane
+           xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="ui.accountantui.AccountantUIController"
+           prefHeight="600" prefWidth="800"
+           stylesheets="@../css/tempInNeed.css">
+            <children>
+
+                <MyTopBar fx:id="bar" layoutX="160"/>
+                <fx:include  fx:id="board" source="/util/board.fxml" layoutX="160" layoutY="40"/>
+
+
+                <JFXListView fx:id="navigation" layoutY="40" prefHeight="560" prefWidth="160">
+                    <HBox fx:id="accountList">
+                        <Label>
+                            <padding><Insets bottom="8" left="5" top="8" /></padding>
+                            账户管理
+                            <graphic>
+                                <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                    <MaterialDesignIconView glyphName="ACCOUNT" size="1.5em" style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                                </StackPane>
+                            </graphic>
+                        </Label>
+                    </HBox>
+                    <HBox fx:id="billReceiptList">
+                        <Label>
+                            <padding><Insets bottom="8" left="5" top="8" /></padding>
+                            制定单据
+                            <graphic>
+                                <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                    <MaterialDesignIconView glyphName="RECEIPT" size="1.5em" style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                                </StackPane>
+                            </graphic>
+                        </Label>
+                    </HBox>
+                    <HBox fx:id="paymentBillList"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>付款单</Label></HBox>
+                    <HBox fx:id="chargeBillList"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>收款单</Label></HBox>
+                    <HBox fx:id="cashBillList"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>现金费用单</Label></HBox>
+
+                    <HBox fx:id="businessList">
+                        <Label>
+                            <padding><Insets bottom="8" left="5" top="8" /></padding>
+                            查看表单
+                            <graphic>
+                                <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                    <MaterialDesignIconView glyphName="RECEIPT" size="1.5em" style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                                </StackPane>
+                            </graphic>
+                        </Label>
+                    </HBox>
+                    <HBox fx:id="salesDetail"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>销售明细表</Label></HBox>
+                    <HBox fx:id="businessProgress"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>经营历程表</Label></HBox>
+                    <HBox fx:id="businessCondition"><padding><Insets bottom="8" left="18" top="8" /></padding><Label>经营情况表</Label></HBox>
+
+                    <HBox fx:id="initialList">
+                        <Label>
+                            <padding><Insets bottom="8" left="5" top="8" /></padding>
+                            期初建账
+                            <graphic>
+                                <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                    <MaterialDesignIconView glyphName="RECEIPT" size="1.5em" style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)"/>
+                                </StackPane>
+                            </graphic>
+                        </Label>
+                    </HBox>
+
+                </JFXListView>
+
+                <AnchorPane fx:id="logopane"  prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: white">
+                    <children>
+                        <ImageView fitHeight="52.0" fitWidth="98.0" layoutX="24.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../default/logo.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </children>
+    </AnchorPane>
+
+
+
+

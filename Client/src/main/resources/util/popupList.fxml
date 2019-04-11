@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.*?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<fx:root type="JFXListView" xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml" stylesheets="@../css/popup.css" styleClass="custom-jfx-list-view1" >
+    <HBox fx:id="listview">
+            <Label >
+                View
+                <graphic>
+                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                        <MaterialDesignIconView glyphName="EYE" size="1.5em"
+                                             styleClass="custom-jfx-list-view-icon"/>
+                    </StackPane>
+                </graphic>
+            </Label>
+    </HBox>
+    <HBox fx:id="listdelete">
+    <Label >
+        Delete
+        <graphic>
+            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                <MaterialDesignIconView glyphName="DELETE" size="1.5em"
+                                     styleClass="custom-jfx-list-view-icon"/>
+            </StackPane>
+        </graphic>
+    </Label>
+    </HBox>
+</fx:root>

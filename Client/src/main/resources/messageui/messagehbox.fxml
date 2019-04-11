@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import ui.util.CircleImageView?>
+
+<?import ui.util.TokenLabel?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import javafx.scene.layout.StackPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<fx:root prefHeight="84.0" prefWidth="265.0" spacing="10" type="HBox" xmlns="http://javafx.com/javafx/8.0.121"
+         xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox spacing="20" alignment="CENTER" prefHeight="80.0" prefWidth="42.0">
+            <children>
+                <CircleImageView fx:id="civ" radius="15" stroke="dimgrey" strokeType="INSIDE"/>
+                <JFXRippler>
+                    <StackPane>
+                        <FontAwesomeIconView fx:id="userlisticon" size="1em" styleClass="icon"/>
+                    </StackPane>
+                </JFXRippler>
+            </children>
+        </VBox>
+        <VBox alignment="CENTER_LEFT">
+            <children>
+                <HBox spacing="30" prefHeight="26.0" prefWidth="164.0">
+                    <children>
+                        <Label fx:id="userLabel" text="LimKruscal"/>
+                        <TokenLabel fx:id="tokenLabel"/>
+                    </children>
+                </HBox>
+                <Label fx:id="label1" prefHeight="24.0" prefWidth="190.0" text="you are stupid"/>
+                <Label fx:id="label2" text="You are very very stupid"/>
+            </children>
+        </VBox>
+
+    </children>
+</fx:root>

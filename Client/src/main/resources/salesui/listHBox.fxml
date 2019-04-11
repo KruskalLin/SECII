@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root  spacing="15" type="HBox" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="id" prefHeight="19.0" prefWidth="52.0" text="13" textFill="#78909c"/>
+    <Label fx:id="name" prefHeight="19.0" prefWidth="80.0" text="13"/>
+</fx:root>

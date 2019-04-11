@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<fx:root type="StackPane" stylesheets="@../css/choose.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <padding><Insets right="10" left="10" top="10" bottom="10"/></padding>
+    <JFXListView fx:id="list" prefHeight="345.0" prefWidth="320.0" styleClass="list-view"/>
+</fx:root>

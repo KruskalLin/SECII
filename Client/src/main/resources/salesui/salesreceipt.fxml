@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import ui.common.ItemTreeTable?>
+<?import ui.util.ModifyButton?>
+
+<fx:root fx:id="stockreceipt" prefHeight="560.0" prefWidth="640.0" stylesheets="@../css/receipt.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane fx:id="pane" layoutX="90.0" layoutY="55.0" prefHeight="287.0" prefWidth="462.0">
+            <children>
+                <Label layoutX="22.0" layoutY="20.0" text="单据">
+                    <font>
+                        <Font name="Arial" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="22.0" layoutY="48.0" text="单据的基本信息" textFill="#a1adbc">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+             <ModifyButton fx:id="modify" layoutX="347.0" layoutY="20.0" text="" />
+                <JFXButton fx:id="delete" layoutX="386.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#delete" text="删除">
+                    <graphic>
+                        <HBox>
+                            <children>
+                                <JFXRippler position="BACK" styleClass="icons-rippler">
+                                    <StackPane>
+                                        <MaterialDesignIconView fill="white" glyphName="DELETE" size="1em" styleClass="icon" />
+                                    </StackPane>
+                                </JFXRippler>
+                            </children>
+                        </HBox>
+                    </graphic>
+                </JFXButton>
+                <Label fx:id="idLabel" layoutX="20.0" layoutY="97.0">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="provider" layoutX="219.0" layoutY="94.0" prefHeight="26.0" prefWidth="76.0">
+                    <font>
+                        <Font size="10.0" />
+                    </font></TextField>
+
+                <Label layoutX="219.0" layoutY="74.0" text="销售商" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                </Label>
+                <Label layoutX="19.0" layoutY="74.0" text="ID" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                </Label>
+                <Label layoutX="332.0" layoutY="74.0" text="操作员" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="operator" layoutX="332.0" layoutY="94.0" prefWidth="76.0">
+                    <font>
+                        <Font size="10.0" />
+                    </font></TextField>
+                <Label layoutX="18.0" layoutY="132.0" text="仓库" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="stock" layoutX="19.0" layoutY="153.0" prefWidth="82.0">
+                    <font>
+                        <Font size="10.0" />
+                    </font></TextField>
+                <Label layoutX="220.0" layoutY="133.0" text="代金券" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                </Label>
+                <JFXTextField fx:id="token" layoutX="220.0" layoutY="153.0" prefHeight="26.0" prefWidth="50.0">
+                    <font>
+                        <Font size="10.0" />
+                    </font></JFXTextField>
+                <Label layoutX="17.0" layoutY="182.0" text="Comment" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="redCreditCopy" layoutX="397.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#clickRedCreditCopy" text="红冲复制" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="redCredit" layoutX="357.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#clickRedCredit" text="红冲">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </JFXButton>
+                <TextArea fx:id="comment" layoutX="22.0" layoutY="204.0" prefHeight="53.0" prefWidth="417.0" wrapText="true" />
+                <JFXButton fx:id="member" layoutX="291.0" layoutY="91.0" onMouseClicked="#selectMember" text="">
+                    <graphic>
+                        <StackPane>
+                            <children>
+                                <MaterialDesignIconView glyphName="ACCOUNT_OUTLINE" size="1.5em" styleClass="icon" />
+                            </children>
+                        </StackPane>
+                    </graphic>
+                </JFXButton>
+            <Label layoutX="280.0" layoutY="132.0" text="折扣" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="discount" layoutX="280.0" layoutY="153.0" prefHeight="26.0" prefWidth="50.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="340.0" layoutY="132.0" text="原价" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="original" layoutX="340.0" layoutY="153.0" prefHeight="26.0" prefWidth="50.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="400.0" layoutY="133.0" text="总价" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="sum" layoutX="400.0" layoutY="153.0" prefHeight="26.0" prefWidth="50.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="114.0" layoutY="132.0" text="业务员" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <TextField fx:id="clerk" layoutX="114.0" layoutY="153.0" prefWidth="82.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+
+
+
+            </children>
+
+        </AnchorPane>
+        <Label layoutX="90.0" layoutY="350.0" text="商品列表">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="24.0" layoutY="12.0" text="销售单据">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Separator layoutX="24.0" layoutY="44.0" prefHeight="4.0" prefWidth="593.0" />
+        <JFXButton fx:id="save" layoutX="509.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#save" text="提交">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </JFXButton>
+
+      <JFXButton fx:id="reset" layoutX="453.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#reset" text="重置">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="reject" layoutX="564.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#reject" text="拒绝">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </JFXButton>
+
+        <JFXRippler fx:id="add" layoutX="530" layoutY="346" maskType="CIRCLE" onMouseClicked="#addTransfer" position="BACK" ripplerFill="#03A9F4" styleClass="icons-rippler">
+            <StackPane layoutX="530.0" layoutY="347.0" style="-fx-padding: 8;">
+                <MaterialDesignIconView glyphName="PLUS" size="1.5em" styleClass="icon" />
+            </StackPane>
+        </JFXRippler>
+        <ItemTreeTable fx:id="itemTreeTable" layoutX="95" layoutY="380" prefHeight="170" />
+      <JFXButton fx:id="approve" layoutX="400.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#approve" text="批准">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="saveAsDraft" layoutX="349.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#saveAsDraft" text="存稿">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </JFXButton>
+
+    </children>
+</fx:root>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<fx:root type="AnchorPane" prefHeight="450" prefWidth="230.0" xmlns="http://javafx.com/javafx/8.0.121"
+         xmlns:fx="http://javafx.com/fxml/1">
+    <Label layoutX="20" layoutY="12" text="选择单据种类">
+        <font>
+            <Font size="14"/>
+        </font>
+    </Label>
+
+    <JFXCheckBox fx:id="salesSellBox" text="销售出货单" layoutX="20" layoutY="35"/>
+    <JFXCheckBox fx:id="salesRetBox" text="销售退货单" layoutX="125" layoutY="35"/>
+
+    <JFXCheckBox fx:id="stockPurBox" text="进货单" layoutX="20" layoutY="60"/>
+    <JFXCheckBox fx:id="stockRetBox" text="进货退货单" layoutX="125" layoutY="60"/>
+
+    <JFXCheckBox fx:id="paymentBox" text="付款单" layoutX="20" layoutY="85"/>
+    <JFXCheckBox fx:id="chargeBox" text="收款单" layoutX="125" layoutY="85"/>
+    <JFXCheckBox fx:id="cashBox" text="现金费用单" layoutX="20" layoutY="110"/>
+
+    <JFXCheckBox fx:id="overflowBox" text="报溢单" layoutX="125" layoutY="110"/>
+    <JFXCheckBox fx:id="damageBox" text="报损单" layoutX="20" layoutY="135"/>
+    <JFXCheckBox fx:id="giftBox" text="赠送单" layoutX="125" layoutY="135"/>
+
+
+    <Label layoutX="20" layoutY="170" text="选择时间范围">
+        <font>
+            <Font size="14"/>
+        </font>
+    </Label>
+
+    <Label text="从" layoutX="10" layoutY="197"/>
+    <JFXDatePicker fx:id="beginTime" layoutX="30" layoutY="190" prefWidth="100"/>
+    <Label text="到" layoutX="127" layoutY="197"/>
+    <JFXDatePicker fx:id="endTime" layoutX="140" layoutY="190" prefWidth="100"/>
+
+    <Label text="客户" layoutX="10" layoutY="250"/>
+    <JFXTextField fx:id="memberField" layoutX="68" layoutY="243" prefWidth="145"/>
+
+    <Label text="业务员" layoutX="10" layoutY="280"/>
+    <JFXTextField fx:id="clerkField" layoutX="68" layoutY="273" prefWidth="145"/>
+
+    <Label text="仓库" layoutX="10" layoutY="310"/>
+    <JFXTextField fx:id="stockField" layoutX="68" layoutY="303" prefWidth="145"/>
+
+
+    <JFXButton fx:id="select" text="选择" layoutX="90" layoutY="380"
+               style="-fx-background-color: #03A9F4" textFill="white"/>
+</fx:root>

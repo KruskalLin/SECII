@@ -1,0 +1,82 @@
+.text-field{
+
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: #d5dce6;
+    -fx-pref-height: 20;
+    -fx-background-color: transparent;
+}
+
+.text-area{
+    -fx-background-insets: 0;
+    -fx-border-color: #d5dce6;
+    -fx-pref-height: 60;
+    -fx-background-color: transparent;
+}
+
+
+.tree-table-view .scroll-bar:horizontal .increment-arrow,
+.tree-table-view .scroll-bar:horizontal .decrement-arrow,
+.tree-table-view .scroll-bar:vertical .increment-button,
+.tree-table-view .scroll-bar:vertical .decrement-button {
+    -fx-padding: 0px;
+}
+
+.tree-table-view .scroll-bar:horizontal {
+    -fx-padding: 0px;
+}
+
+
+.tree-table-view  .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.tree-table-view  .scroll-bar:vertical .increment-button ,.tree-table-view .scroll-bar:vertical .decrement-button {
+    -fx-background-color:transparent;
+    -fx-border-color:derive(gray,80%);
+}
+
+.tree-table-view .scroll-bar:vertical .track,.tree-table-view .scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-border-color: linear-gradient(to bottom right, rgba(140, 162, 246, 0.70), rgba(101, 158, 251, 0.70));
+    -fx-border-radius: 2;
+}
+.tree-table-view .scroll-bar:vertical .increment-arrow {
+
+    -fx-padding: 0;
+}
+
+
+
+.tree-table-view .column-header {
+    -fx-border-width:0;
+    -fx-background-color: rgb(234,238,240);
+}
+
+.tree-table-view .column-header .label {
+    -fx-padding: 8 0 8 0;
+    -fx-text-fill: #78909c;
+    -fx-border-color: transparent;
+}
+
+.tree-table-view .tree-table-cell {
+    -fx-border-width: 0 0 0 0;
+    -fx-alignment: top-center;
+}
+
+
+#pane{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, gainsboro, 10, 0.1, 0, 0);
+}
+#delete,#reject{
+    -fx-text-fill: white;
+    -fx-background-color: red;
+}
+
+#save,#reset{
+    -fx-text-fill: white;
+    -fx-background-color: #03A9F4;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<fx:root type="AnchorPane" prefHeight="250" prefWidth="230.0" xmlns="http://javafx.com/javafx/8.0.121"
+         xmlns:fx="http://javafx.com/fxml/1">
+
+    <Label layoutX="20" layoutY="20" text="选择时间范围">
+        <font>
+            <Font size="14"/>
+        </font>
+    </Label>
+
+    <Label text="从" layoutX="10" layoutY="47"/>
+    <JFXDatePicker fx:id="beginTime" layoutX="30" layoutY="40" prefWidth="100"/>
+    <Label text="到" layoutX="127" layoutY="47"/>
+    <JFXDatePicker fx:id="endTime" layoutX="140" layoutY="40" prefWidth="100"/>
+
+    <Label text="客户" layoutX="10" layoutY="100"/>
+    <JFXTextField fx:id="memberField" layoutX="68" layoutY="93" prefWidth="145"/>
+
+    <Label text="业务员" layoutX="10" layoutY="130"/>
+    <JFXTextField fx:id="clerkField" layoutX="68" layoutY="123" prefWidth="145"/>
+
+    <Label text="仓库" layoutX="10" layoutY="160"/>
+    <JFXTextField fx:id="stockField" layoutX="68" layoutY="153" prefWidth="145"/>
+
+
+    <JFXButton fx:id="select" text="选择" layoutX="90" layoutY="200"
+               style="-fx-background-color: #03A9F4" textFill="white"/>
+</fx:root>

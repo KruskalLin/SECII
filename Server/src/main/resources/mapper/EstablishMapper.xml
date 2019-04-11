@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.EstablishMapper">
+
+    <insert id = "transfer">
+        insert into ${time}account select * from account
+        insert into ${time}PaymentBillReceipt select * from PaymentBillReceipt
+        insert into ${time}ChargeBillReceipt select * from ChargeBillReceipt
+        insert into ${time}CashBillReceipt select * from CashBillReceipt
+        insert into ${time}SalesDetail select * from SalesDetail
+        insert into ${time}BusinessProgress select * from BusinessProgress
+        insert into ${time}BusinessCondition select * from BusinessCondition
+    </insert>
+
+</mapper>

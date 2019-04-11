@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.LogDataPOMapper">
+    <resultMap id="resultMap" type="po.LogPO">
+        <result column="LogId" property="logId"/>
+
+    </resultMap>
+
+    <select id="getId" resultType="int">
+        select max(logId)+1 from Log
+    </select>
+    <insert id="insert">
+        INSERT INTO Log(logId,createTime,username,userCategory,eventCategory,event)
+        VALUES (#{logId},#{createTime},#{username},#{userCategory},#{eventCategory},#{event})
+    </insert>
+
+
+    <select id="search" resultMap="resultMap">
+        select * from Log
+    </select>
+
+</mapper>

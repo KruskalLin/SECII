@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import ui.util.CircleImageView?>
+
+<fx:root translateY="10" translateX="5" prefHeight="60.0" prefWidth="240.0" spacing="10" type="HBox" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<CircleImageView fx:id="civ" radius="17" translateY="4" />
+    <Label fx:id="id" text="13" textFill="#78909c" translateY="12">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font></Label>
+    <VBox spacing="8">
+        <Label fx:id="name" text="name" textFill="#1ba3dd">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <HBox spacing="10">
+            <MaterialDesignIconView fx:id="icon" glyphName="ACCOUNT" size="1.5em" style="-fx-fill: linear-gradient(to bottom right, #8CA2F6,#659EFB)" />
+            <Label text="等级" translateY="2">
+            <font>
+               <Font size="10.0" />
+            </font></Label>
+            <Label fx:id="degree" translateY="2">
+            <font>
+               <Font size="12.0" />
+            </font></Label>
+        </HBox>
+    </VBox>
+    <Label fx:id="comment" prefWidth="30" translateY="24">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+
+</fx:root>

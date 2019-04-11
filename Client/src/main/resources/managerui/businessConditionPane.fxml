@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<!--<?import ui.util.RefreshablePane?>-->
+
+<fx:root id="BusinessConditionPane4" prefHeight="560.0" prefWidth="640.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane layoutX="24.0" layoutY="14.0" prefHeight="533.0" prefWidth="593.0" style="-fx-background-color: white;">
+    <Label layoutX="19.0" layoutY="31" text="开始时间" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <JFXDatePicker fx:id="beginTimePicker" layoutX="90.0" layoutY="22" prefHeight="4.0" prefWidth="120" />
+
+    <Label layoutX="290.0" layoutY="31" text="结束时间" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <JFXDatePicker fx:id="endTimePicker" layoutX="360" layoutY="22" prefHeight="4.0" prefWidth="120" />
+
+    <JFXRippler fx:id="search" layoutX="498.0" layoutY="13.0" maskType="CIRCLE" onMouseClicked="#search" position="BACK">
+        <StackPane style="-fx-padding: 8;" translateY="5">
+            <FontAwesomeIconView glyphName="SEARCH" size="1.5em" />
+        </StackPane>
+    </JFXRippler>
+
+    <JFXButton fx:id="exportButton" layoutX="491.0" layoutY="70.0" onMouseClicked="#exportExcel" text="导出为excel" />
+
+    <PieChart fx:id="incomePieChart" layoutX="43.0" layoutY="70.0" prefHeight="350" prefWidth="200" title="收入类" />
+    <PieChart fx:id="costPieChart" layoutX="250.0" layoutY="70.0" prefHeight="350" prefWidth="200" title="支出类" />
+
+
+
+    <Label fx:id="salesIncomeLabel" layoutX="50.0" layoutY="430" text="销售收入：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="overflowIncomeLabel" layoutX="50.0" layoutY="450.0" text="商品报溢收入：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="purPriceAdjustIncomeLabel" layoutX="50.0" layoutY="470.0" text="成本调价收入：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="priceDiffIncomeLabel" layoutX="50.0" layoutY="490.0" text="进货退货差价：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="tokenIncomeLabel" layoutX="50.0" layoutY="510.0" text="代金券与实际收款差额：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+
+    <Label fx:id="purCostLabel" layoutX="272.0" layoutY="430.0" text="销售成本：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="damageCostLabel" layoutX="272.0" layoutY="450.0" text="商品报损支出：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="giftCostLabel" layoutX="272.0" layoutY="470.0" text="商品赠出支出：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+
+    <Label fx:id="incomeLabel" layoutX="450.0" layoutY="430" text="总收入：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="discountLabel" layoutX="450.0" layoutY="450.0" text="折让：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="costLabel" layoutX="450.0" layoutY="470.0" text="总支出：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="profitLabel" layoutX="450.0" layoutY="490.0" text="总利润：" textFill="#a1adbc">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+      <effect>
+         <DropShadow color="#dadada" />
+      </effect>
+</AnchorPane>
+</fx:root>

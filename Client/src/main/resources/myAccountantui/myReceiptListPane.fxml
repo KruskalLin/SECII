@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import ui.util.RefreshablePane?>
+<fx:root type="RefreshablePane" id="myReceiptListPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         prefHeight="560.0" prefWidth="640.0">
+
+    <JFXTextField fx:id="searchField" focusColor="#8CA2F6" layoutX="27.0" layoutY="28.0" prefHeight="30.0"
+                  prefWidth="150.0"/>
+    <JFXRippler fx:id="search" onMouseClicked="#search" layoutX="177" layoutY="22" maskType="CIRCLE" position="BACK"
+                ripplerFill="#03A9F4" styleClass="icons-rippler">
+        <StackPane style="-fx-padding: 8;" translateY="5">
+            <OctIconView glyphName="SEARCH" size="1.5em" styleClass="icon"/>
+        </StackPane>
+    </JFXRippler>
+
+
+    <JFXButton fx:id="filter" layoutX="427.0" layoutY="35.0" mnemonicParsing="false" text="筛选">
+        <graphic>
+            <StackPane>
+                <FontAwesomeIconView fill="white" glyphName="NAVICON" size="1em" styleClass="icon"/>
+            </StackPane>
+        </graphic>
+    </JFXButton>
+
+
+    <JFXButton fx:id="delete" layoutX="557.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#deleteList"
+               text="删除">
+        <graphic>
+            <StackPane>
+                <MaterialDesignIconView fill="white" glyphName="DELETE" size="1em" styleClass="icon"/>
+            </StackPane>
+        </graphic>
+    </JFXButton>
+
+    <JFXButton fx:id="add" layoutX="494.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#add" text="新建">
+        <graphic>
+            <StackPane>
+                <FontAwesomeIconView fill="white" glyphName="PLUS" size="1em" styleClass="icon"/>
+            </StackPane>
+        </graphic>
+    </JFXButton>
+
+</fx:root>

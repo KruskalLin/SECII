@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TotalPromotionPOMapper">
+    <resultMap id="resultMap" type="po.promotionPO.TotalPromotionPO">
+        <!--<result typeHandler="MyDateTypeHandler" column="createTime" property="createTime"/>-->
+        <!--<result typeHandler="MyDateTypeHandler" column="lastModifiedTime" property="lastModifiedTime"/>-->
+        <!--<result typeHandler="MyDateTypeHandler" column="beginTime" property="beginTime"/>-->
+        <!--<result typeHandler="MyDateTypeHandler" column="endTime" property="endTime"/>-->
+        <result typeHandler="MyJsonHandler" column="gifts" property="gifts"/>
+    </resultMap>
+
+    <select id="getDayId" resultType="int">
+        select max(dayId)+1 from totalPromotion where createTime &gt;= #{today}
+    </select>
+    <insert id="insert">
+        insert into totalPromotion(dayId, createTime, lastModifiedTime, beginTime, endTime, comment, promotionState, requiredTotal, tokenAmount, gifts)
+        values(#{dayId}, #{createTime}, #{lastModifiedTime}, #{beginTime}, #{endTime}, #{comment}, #{promotionState}, #{requiredTotal}, #{tokenAmount}, #{gifts, typeHandler=MyJsonHandler})
+    </insert>
+    <update id="update">
+        update totalPromotion set lastModifiedTime=#{lastModifiedTime}, beginTime=#{beginTime}, endTime=#{endTime}, comment=#{comment}, promotionState=#{promotionState}, requiredTotal=#{requiredTotal}, tokenAmount=#{tokenAmount}, gifts=#{gifts, typeHandler=MyJsonHandler}
+        where dayId=#{dayId} and createTime=#{createTime}
+    </update>
+    <delete id="delete">
+        delete from totalPromotion where dayId=#{dayId} and createTime=#{createTime}
+    </delete>
+    <select id="selectByMold" resultType="po.promotionPO.TotalPromotionPO">
+        select * from  totalPromotion where dayId=#{dayId} and createTime=#{createTime}
+    </select>
+    <select id="selectInEffect" resultMap="resultMap">
+        select * from totalPromotion where beginTime &lt;= #{begin} and endTime &gt;= #{end} and promotionState=#{promotionState}
+    </select>
+    <select id="search" resultMap="resultMap">
+        select * from totalPromotion
+        <where>
+            <if test="lastModifiedFloor != null">
+                lastModifiedTime &gt;= #{lastModifiedFloor}
+            </if>
+            <if test="lastModifiedCeil != null">
+                AND lastModifiedTime &lt;= #{lastModifiedCeil}
+            </if>
+            <if test="beginFloor != null">
+                AND beginTime &gt;= #{beginFloor}
+            </if>
+            <if test="beginCeil != null">
+                AND beginTime &lt;= #{beginCeil}
+            </if>
+            <if test="endFloor != null">
+                AND endTime &gt;= #{endFloor}
+            </if>
+            <if test="endCeil != null">
+                AND endTime &lt;= #{endCeil}
+            </if>
+            <if test="promotionState != null">
+                AND promotionState=#{promotionState}
+            </if>
+        </where>
+    </select>
+
+</mapper>

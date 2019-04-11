@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.GoodsPOMapper">
+    <!--
+         商品PO的添加操作
+    -->
+    <insert id="insert">
+        insert into goods(id,goodName,goodType,classifyId,inventoryNum,purPrice,salePrice,recentPurPrice,recentSalePrice,alarmNumber,isDelete,isStockPur)
+        values(#{id},#{goodName},#{goodType},#{classifyId},#{inventoryNum},#{purPrice},#{salePrice},#{recentPurPrice},#{recentSalePrice},#{alarmNumber},#{isDelete},#{isStockPur})
+    </insert>
+
+    <!--
+         商品PO的删除操作
+    -->
+    <delete id="delete">
+
+        delete from goods where id = #{id}
+
+    </delete>
+
+    <!--
+         商品PO的修改操作
+         报错，之后回来测试并且修改
+    -->
+    <update id="update">
+        update goods set id=#{id},<!--goodName=#{goodName},goodType=#{goodType},classifyId=#{classifyId},inventoryNum = #{inventoryNum},purPrice =#{purPrice},
+        salePrice= #{salePrice},recentPurPrice = #{recentPurPrice},recentSalePrice = #{recentSalePrice},alarmNumber = #{alarmNumber},isDelete = #{isDelete}  where id=#{id}-->
+
+        <if test="goodName != null">
+            goodName=#{goodName},
+        </if>
+        <if test="goodType != null">
+            goodType=#{goodType},
+        </if>
+        <if test="classifyId != null">
+            classifyId=#{classifyId},
+        </if>
+        <if test="inventoryNum != 0">
+            inventoryNum = #{inventoryNum},
+        </if>
+        <if test="purPrice != 0.0">
+            purPrice =#{purPrice},
+        </if>
+        <if test="salePrice != 0.0">
+            salePrice= #{salePrice},
+        </if>
+        <if test="recentPurPrice != 0.0">
+            recentPurPrice = #{recentPurPrice},
+        </if>
+        <if test="recentSalePrice != 0.0">
+            recentSalePrice = #{recentSalePrice},
+        </if>
+        <if test="alarmNumber != 0">
+            alarmNumber = #{alarmNumber},
+        </if>
+        isDelete = #{isDelete},
+
+        isStockPur = #{isStockPur}
+
+        where id=#{id}
+    </update>
+
+    <!--
+         获取所有商品
+    -->
+    <select id="show" resultType="po.GoodsPO">
+        select * from goods
+    </select>
+
+    <!--
+          进行模糊查询
+    -->
+    <select id="selectInEffect" parameterType="java.lang.String" resultType="po.GoodsPO">
+        select * from goods where id like CONCAT('%',#{key},'%') or goodName like CONCAT('%',#{key},'%') or goodType like
+        CONCAT('%',#{key},'%') or classifyId like CONCAT('%',#{key},'%')
+    </select>
+
+    <select id="selectById" parameterType="java.lang.String" resultType="po.GoodsPO">
+        select * from goods where id = #{id}
+    </select>
+</mapper>

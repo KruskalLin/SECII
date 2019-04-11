@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+<?import ui.util.ModifyButton?>
+
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<fx:root fx:id="memberdetail" prefHeight="560.0" prefWidth="640.0" stylesheets="@../css/userdetail.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane fx:id="pane" layoutX="70.0" layoutY="55.0" prefHeight="487.0" prefWidth="500.0">
+            <children>
+                <ImageView fx:id="imageview" fitHeight="100.0" fitWidth="100.0" layoutX="35.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../Common/src/main/resources/default/timg.jpg" />
+                    </image></ImageView>
+                <JFXTextField fx:id="memberName" layoutX="157.0" layoutY="80.0" prefWidth="132.0" text="Member">
+                    <font>
+                        <Font name="Arial" size="24.0" />
+                    </font>
+                </JFXTextField>
+                <ModifyButton fx:id="modify" layoutX="375.0" layoutY="12.0" text="" />
+                <Separator layoutX="157.0" layoutY="114.0" prefHeight="4.0" prefWidth="320.0" />
+                <JFXButton fx:id="delete" layoutX="417.0" layoutY="12.0" mnemonicParsing="false" text="删除">
+                    <graphic>
+                        <HBox>
+                            <children>
+                                <JFXRippler position="BACK" styleClass="icons-rippler">
+                                    <StackPane>
+                                        <MaterialDesignIconView fill="white" glyphName="DELETE" size="1em" styleClass="icon" />
+                                    </StackPane>
+                                </JFXRippler>
+                            </children>
+                        </HBox>
+                    </graphic>
+                </JFXButton>
+                <Label layoutX="176.0" layoutY="138.0" text="客户ID" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></Label>
+                <Label fx:id="memberId" layoutX="271.0" layoutY="131.0" text="00001" />
+                <Label layoutX="176.0" layoutY="168.0" text="客户类型" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></Label>
+                <Separator layoutX="15.0" layoutY="203.0" prefHeight="4.0" prefWidth="463.0" />
+                <TextField fx:id="email" layoutX="35.0" layoutY="254.0" prefHeight="15.0" prefWidth="225.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font></TextField>
+                <Label layoutX="35.0" layoutY="228.0" text="邮件" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></Label>
+                <TextField fx:id="phone" layoutX="273.0" layoutY="254.0" prefWidth="191.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font></TextField>
+                <Label layoutX="271.0" layoutY="228.0" prefHeight="4.0" prefWidth="45.0" text="电话" textAlignment="CENTER" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></Label>
+                <TextArea fx:id="comment" layoutX="34.0" layoutY="413.0" prefHeight="53.0" prefWidth="433.0" wrapText="true">
+                    <font>
+                        <Font size="12.0" />
+                    </font></TextArea>
+                <Label layoutX="37.0" layoutY="389.0" text="介绍" textFill="#a1adbc">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></Label>
+                <Label layoutX="29.0" layoutY="14.0" text="基本信息">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <JFXComboBox fx:id="memberCategory" layoutX="307.0" layoutY="164.0" prefHeight="23.0" prefWidth="132.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <Label fx:id="SELLER">
+                                销售商
+                                <graphic>
+                                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                        <MaterialDesignIconView glyphName="PAUSE_CIRCLE_OUTLINE" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                                    </StackPane>
+                                </graphic>
+                            </Label>
+                            <Label fx:id="SUPPLIER">
+                                供应商
+                                <graphic>
+                                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                        <MaterialIconView glyphName="REMOVE" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                                    </StackPane>
+                                </graphic>
+                            </Label>
+                        </FXCollections>
+                    </items>
+                </JFXComboBox>
+                <Label layoutX="29.0" layoutY="46.0" text="客户的基本信息（包括id与姓名）" textFill="#a1adbc">
+                    <font>
+                        <Font size="12.0" />
+                    </font></Label>
+                <Label layoutX="28.0" layoutY="207.0" text="客户的联系方式以及客户的关联信息" textFill="#a1adbc">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+
+            <Rating fx:id="rating" layoutX="307.0" layoutY="79.0"/>
+            <Label layoutX="35.0" layoutY="284.0" text="地址" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="address" layoutX="34.0" layoutY="305.0" prefHeight="21.0" prefWidth="320.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="35.0" layoutY="335.0" text="业务员" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="clerkName" layoutX="34.0" layoutY="358.0" prefHeight="21.0" prefWidth="85.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="150.0" layoutY="335.0" text="应收额度" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="receiableAmount" layoutX="150.0" layoutY="357.0" prefWidth="100.0" />
+            <Label layoutX="270.0" layoutY="335.0" text="应付" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="give" disable="true" editable="false" layoutX="270.0" layoutY="357.0" prefWidth="100.0" />
+            <Label layoutX="390.0" layoutY="335.0" text="应收" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="get" disable="true" editable="false" layoutX="390.0" layoutY="357.0" prefWidth="100.0" />
+            <Label layoutX="368.0" layoutY="284.0" prefHeight="15.0" prefWidth="64.0" text="邮编" textAlignment="CENTER" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="zipcode" layoutX="369.0" layoutY="305.0" prefHeight="21.0" prefWidth="96.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            </children>
+        </AnchorPane>
+        <Label layoutX="24.0" layoutY="12.0" text="客户信息">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Separator layoutX="24.0" layoutY="44.0" prefHeight="4.0" prefWidth="593.0" />
+        <JFXButton fx:id="save" layoutX="564.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#save" text="保存">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </JFXButton>
+    </children>
+
+</fx:root>

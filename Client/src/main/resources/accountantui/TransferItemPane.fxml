@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="357.0" prefWidth="300.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <JFXButton fx:id="delete" layoutX="160.0" layoutY="320.0" onMouseClicked="#delete" text="删除" textFill="WHITE"/>
+
+        <Label layoutX="100.0" layoutY="89.0" text="银行账户" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <JFXTextField fx:id="accountID" layoutX="180.0" layoutY="89.0"  prefHeight="23.0" prefWidth="100.0" />
+
+        <Label layoutX="100.0" layoutY="148.0" text="转账金额" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <JFXTextField fx:id="price" layoutX="180.0" layoutY="144.0" prefHeight="23.0" prefWidth="100.0" />
+
+        <Label layoutX="100.0" layoutY="210.0" text="备注" textFill="#a1adbc">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <JFXTextField fx:id="comment" layoutX="180.0" layoutY="210.0" prefHeight="23.0" prefWidth="100.0" />
+
+        <Label layoutX="113.0" layoutY="15.0" text="转账信息">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="save" layoutX="92.0" layoutY="320.0" onMouseClicked="#save" style="-fx-background-color: #03A9F4;" text="保存" textFill="WHITE" />
+    </children>
+</fx:root>

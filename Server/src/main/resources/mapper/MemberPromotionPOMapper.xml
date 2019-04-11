@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.MemberPromotionPOMapper">
+    <resultMap id="resultMap" type="po.promotionPO.MemberPromotionPO">
+        <!--<result typeHandler="MyDateTypeHandler" column="createTime" property="createTime"/>-->
+        <!--<result typeHandler="MyDateTypeHandler" column="lastModifiedTime" property="lastModifiedTime"/>-->
+        <!--<result typeHandler="MyDateTypeHandler" column="beginTime" property="beginTime"/>-->
+        <!--<result typeHandler="MyDateTypeHandler" column="endTime" property="endTime"/>-->
+        <result typeHandler="MyJsonHandler" column="gifts" property="gifts" />
+    </resultMap>
+
+    <select id="getDayId" resultType="int">
+      select max(dayId)+1 from memberPromotion where createTime &gt;= #{today}
+    </select>
+    <insert id="insert">
+        insert into memberPromotion(dayId, createTime, lastModifiedTime, beginTime, endTime, comment, promotionState, requiredLevel, discountFraction, tokenAmount, gifts)
+        values(#{dayId}, #{createTime}, #{lastModifiedTime}, #{beginTime}, #{endTime}, #{comment}, #{promotionState}, #{requiredLevel}, #{discountFraction}, #{tokenAmount}, #{gifts, typeHandler=MyJsonHandler})
+    </insert>
+    <update id="update">
+        update memberPromotion set lastModifiedTime=#{lastModifiedTime}, beginTime=#{beginTime}, endTime=#{endTime}, comment=#{comment}, promotionState=#{promotionState}, requiredLevel=#{requiredLevel}, discountFraction=#{discountFraction}, tokenAmount=#{tokenAmount}, gifts=#{gifts, typeHandler=MyJsonHandler}
+        where dayId=#{dayId} and createTime=#{createTime}
+    </update>
+    <delete id="delete">
+        delete from memberPromotion where dayId=#{dayId} and createTime=#{createTime}
+    </delete>
+    <select id="selectByMold" resultType="po.promotionPO.MemberPromotionPO">
+        select * from memberPromotion where dayId=#{dayId} and createTime=#{createTime}
+    </select>
+    <select id="selectInEffect" resultType="po.promotionPO.MemberPromotionPO">
+        select * from memberPromotion where beginTime &lt;= #{begin} and endTime &gt;= #{end} and promotionState = #{promotionState}
+    </select>
+    <select id="search" resultMap="resultMap">
+        select * from memberPromotion
+        <where>
+            <if test="lastModifiedFloor != null">
+                lastModifiedTime &gt;= #{lastModifiedFloor}
+            </if>
+            <if test="lastModifiedCeil != null">
+                AND lastModifiedTime &lt;= #{lastModifiedCeil}
+            </if>
+            <if test="beginFloor != null">
+                AND beginTime &gt;= #{beginFloor}
+            </if>
+            <if test="beginCeil != null">
+                AND beginTime &lt;= #{beginCeil}
+            </if>
+            <if test="endFloor != null">
+                AND endTime &gt;= #{endFloor}
+            </if>
+            <if test="endCeil != null">
+                AND endTime &lt;= #{endCeil}
+            </if>
+            <if test="promotionState != null">
+                AND promotionState = #{promotionState}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

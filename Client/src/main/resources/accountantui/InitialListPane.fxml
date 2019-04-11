@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<fx:root type="AnchorPane" fx:id="initialListPane"  xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         prefHeight="560.0" prefWidth="640.0">
+
+
+
+    <JFXButton fx:id="filter" text="Filter" layoutX="420.0" layoutY="35.0"
+               mnemonicParsing="false" onMouseClicked="#initialAccount" >
+        <graphic>
+            <HBox>
+                <children>
+                    <JFXRippler position="BACK" styleClass="icons-rippler">
+                        <StackPane>
+                            <FontAwesomeIconView fill="white" glyphName="NAVICON" size="1em" styleClass="icon" />
+                        </StackPane>
+                    </JFXRippler>
+                </children>
+            </HBox>
+        </graphic>
+    </JFXButton>
+
+    <BorderPane fx:id="borderPane" layoutX="20.0" layoutY="80.0" prefHeight="480.0" prefWidth="600.0"/>
+</fx:root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ListSelectionView?>
+
+<fx:root prefHeight="338.0" prefWidth="400.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListSelectionView fx:id="selectView" layoutX="8.0" layoutY="62.0" prefHeight="226.0" prefWidth="384.0" />
+      <Label layoutX="143.0" layoutY="25.0" text="List Selection">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <!--
+      <JFXButton fx:id="save" layoutX="132.0" layoutY="300.0" text="Save" onMouseClicked="#save" />
+      -->
+      <JFXButton fx:id="cancel" layoutX="166.0" layoutY="300.0" onMouseClicked="#cancel" text="Cancel" />
+   </children>
+</fx:root>

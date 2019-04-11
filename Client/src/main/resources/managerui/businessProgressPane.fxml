@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import ui.managerui.checkui.CheckTable?>
+<fx:root type="AnchorPane" id="businessProgressPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         prefHeight="560.0" prefWidth="640.0">
+    <JFXTextField fx:id="keywordField" layoutX="27.0" layoutY="28.0" prefHeight="30.0" prefWidth="150.0"/>
+
+    <JFXRippler fx:id="search" layoutX="177" layoutY="22" maskType="CIRCLE" position="BACK">
+        <StackPane style="-fx-padding: 8;" translateY="5">
+            <FontAwesomeIconView glyphName="SEARCH" size="1.5em" styleClass="icon"/>
+        </StackPane>
+    </JFXRippler>
+
+    <JFXButton fx:id="filter" text="筛选" layoutX="467.0" layoutY="35.0"
+               mnemonicParsing="false">
+        <graphic>
+            <JFXRippler>
+                <StackPane>
+                    <FontAwesomeIconView fill="white" glyphName="NAVICON" size="1em"/>
+                </StackPane>
+            </JFXRippler>
+        </graphic>
+    </JFXButton>
+
+    <JFXButton fx:id="exportButton" layoutX="537" layoutY="35" text="导出为excel" onMouseClicked="#exportExcel"/>
+
+
+</fx:root>

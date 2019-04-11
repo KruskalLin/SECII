@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<StackPane fx:id="board" prefWidth="640" prefHeight="560"
+           style="-fx-background-color: rgb(244,247,249); -fx-background-radius: 0 0 10 0;-fx-border-radius: 0 0 10 0;"
+           fx:controller="ui.common.BoardController"
+           xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+
+</StackPane>
+

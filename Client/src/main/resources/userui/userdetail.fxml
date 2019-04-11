@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import ui.util.ModifyButton?>
+
+<fx:root fx:id="userdetail" prefHeight="560.0" prefWidth="640.0" stylesheets="@../css/userdetail.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <AnchorPane fx:id="pane" layoutX="70.0" layoutY="55.0" prefHeight="470.0" prefWidth="500.0">
+         <children>
+                <ImageView fx:id="imageview" fitHeight="100.0" fitWidth="100.0" layoutX="35.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Common/src/main/resources/default/timg.jpg" />
+               </image>
+                </ImageView>
+
+              <JFXTextField fx:id="username" layoutX="157.0" layoutY="80.0" prefWidth="132.0" text="Username">
+                  <font>
+                      <Font name="Arial" size="24.0" />
+                  </font>
+              </JFXTextField>
+
+              <ModifyButton fx:id="modify" layoutX="365.0" layoutY="12.0" text="" />
+
+            <Separator layoutX="157.0" layoutY="114.0" prefHeight="4.0" prefWidth="320.0" />
+
+            <Label fx:id="safe" layoutX="25.0" layoutY="372.0" text="Safe Info">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+
+            <JFXButton fx:id="delete" layoutX="409.0" layoutY="12.0" mnemonicParsing="false" onAction="#delete" text="删除">
+                <graphic>
+                    <HBox>
+                        <children>
+                            <JFXRippler position="BACK" styleClass="icons-rippler">
+                                <StackPane>
+                                    <MaterialDesignIconView fill="white" glyphName="DELETE" size="1em" styleClass="icon" />
+                                </StackPane>
+                            </JFXRippler>
+                        </children>
+                    </HBox>
+                </graphic>
+            </JFXButton>
+
+
+            <Label layoutX="176.0" layoutY="138.0" text="创建时间:" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+
+            <Label fx:id="date" layoutX="247.0" layoutY="138.0" text="2017-01-01" />
+
+            <Label layoutX="176.0" layoutY="168.0" text="社交网络:" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+
+             <JFXRippler fx:id="facebook" layoutX="233.0" layoutY="158.0" maskType="CIRCLE" position="BACK" ripplerFill="#03A9F4" styleClass="icons-rippler">
+              <StackPane style="-fx-padding: 8;">
+                  <MaterialDesignIconView fx:id="facebookIcon" glyphName="FACEBOOK" size="1.5em" styleClass="icon" />
+              </StackPane>
+             </JFXRippler>
+             <JFXRippler fx:id="twitter" layoutX="263.0" layoutY="158.0" maskType="CIRCLE" position="BACK" ripplerFill="#03A9F4" styleClass="icons-rippler">
+                 <StackPane style="-fx-padding: 8;">
+                     <MaterialDesignIconView fx:id="twitterIcon" glyphName="TWITTER" size="1.5em" styleClass="icon" />
+                 </StackPane>
+             </JFXRippler>
+
+             <JFXRippler fx:id="github" layoutX="293.0" layoutY="158.0" maskType="CIRCLE" position="BACK" ripplerFill="#03A9F4" styleClass="icons-rippler">
+                 <StackPane style="-fx-padding: 8;">
+                     <MaterialDesignIconView fx:id="githubIcon" glyphName="GITHUB_BOX" size="1.5em" styleClass="icon" />
+                 </StackPane>
+             </JFXRippler>
+
+            <Separator layoutX="15.0" layoutY="203.0" prefHeight="4.0" prefWidth="463.0" />
+            <Separator layoutX="15.0" layoutY="368.0" prefHeight="4.0" prefWidth="463.0" />
+
+            <TextField fx:id="email" layoutX="35.0" layoutY="254.0" prefHeight="15.0" prefWidth="225.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Label layoutX="35.0" layoutY="228.0" text="邮件" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="phone" layoutX="273.0" layoutY="254.0" prefWidth="191.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Label layoutX="271.0" layoutY="228.0" prefHeight="4.0" prefWidth="45.0" text="电话" textAlignment="CENTER" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextArea fx:id="comment" layoutX="34.0" layoutY="305.0" prefHeight="53.0" prefWidth="433.0" wrapText="true">
+               <font>
+                  <Font size="12.0" />
+               </font></TextArea>
+            <Label layoutX="37.0" layoutY="284.0" text="介绍" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="29.0" layoutY="14.0" text="基本信息">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="usertype" layoutX="325.0" layoutY="75.0" prefHeight="36.0" prefWidth="147.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <Label fx:id="InventoryManager" text="库存管理员" />
+
+                        <Label fx:id="Salesman" text="销售员" />
+                        <Label fx:id="SalesManager" text="销售经理" />
+                        <Label fx:id="Accountant" text="财务人员" />
+                        <Label fx:id="GeneralManager" text="总经理" />
+                        <Label fx:id="UserManager" text="用户管理员" />
+
+                    </FXCollections>
+                </items>
+            </JFXComboBox>
+
+
+            <Label layoutX="29.0" layoutY="46.0" text="用户的基本信息" textFill="#a1adbc">
+               <font>
+                  <Font size="12.0" />
+               </font></Label>
+            <Label layoutX="31.0" layoutY="399.0" text="用户相关的安全信息包括密码等" textFill="#a1adbc">
+               <font>
+                  <Font size="12.0" />
+               </font></Label>
+            <Label layoutX="31.0" layoutY="435.0" text="密码:" textFill="#a1adbc">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="password" layoutX="126.0" layoutY="435.0" text="admin">
+               <font>
+                  <Font size="12.0" />
+               </font></Label>
+            <JFXButton fx:id="reset" layoutX="414.0" layoutY="424.0" mnemonicParsing="false" onAction="#reset" text="重置">
+               <font>
+                  <Font size="12.0" />
+               </font></JFXButton>
+            <Label layoutX="28.0" layoutY="207.0" text="用户的联系方式" textFill="#a1adbc">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+
+            <JFXButton fx:id="choose" layoutX="55.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#choosefile" text="选择文件">
+               <font>
+                  <Font size="12.0" />
+               </font>
+                <graphic>
+                    <HBox>
+                        <children>
+                            <JFXRippler position="BACK" styleClass="icons-rippler">
+                                <StackPane>
+                                    <MaterialDesignIconView glyphName="FOLDER_OUTLINE" size="1em" styleClass="icon" />
+                                </StackPane>
+                            </JFXRippler>
+                        </children>
+                    </HBox>
+                </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label layoutX="24.0" layoutY="12.0" text="用户信息">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="24.0" layoutY="44.0" prefHeight="4.0" prefWidth="593.0" />
+      <JFXButton fx:id="save" layoutX="564.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#save" text="保存">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </JFXButton>
+    </children>
+
+</fx:root>

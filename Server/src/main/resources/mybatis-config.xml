@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE configuration
+        PUBLIC '-//mybatis.org//DTD Config 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-config.dtd'>
+<configuration>
+    <properties resource='jdbc.properties'/>
+    <typeAliases>
+        <typeAlias type='mybatis.MyJsonHandler' alias='MyJsonHandler'></typeAlias>
+        <typeAlias type='mybatis.MyDateTypeHandler' alias='MyDateTypeHandler'></typeAlias>
+    </typeAliases>
+    <typeHandlers>
+        <typeHandler handler="MyJsonHandler"/>
+        <typeHandler handler="MyDateTypeHandler"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="util.ReceiptState"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="util.PromotionState"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="util.UserCategory"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="util.MemberCategory"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="util.EventCategory"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="util.BillType"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="util.MessagePurpose"/>
+
+    </typeHandlers>
+    <environments default='development'>
+        <environment id='development'>
+            <transactionManager type='JDBC'/>
+            <dataSource type='POOLED'>
+                <property name='driver' value='${jdbc.driverClassName}'/>
+                <property name='url' value='${jdbc.url}'/>
+                <property name='username' value='${jdbc.username}'/>
+                <property name='password' value='${jdbc.password}'/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="mapper"/>
+    </mappers>
+</configuration>

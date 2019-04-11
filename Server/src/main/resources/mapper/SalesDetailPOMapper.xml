@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.SalesDetailPOMapper">
+
+    <select id="select" resultType="po.SalesDetailPO">
+        select *  from SalesDetail
+        <where>
+            <if test="begin! = null">
+                date >= #{begin}
+            </if>
+            <if test="end != null">
+                AND date &lt;= #{end}
+            </if>
+            <if test="goodsName != null">
+                AND goodsName = #{goodsName}
+            </if>
+            <if test="clientID != null">
+                AND clientID = #{clientID}
+            </if>
+            <if test="clerkName != null">
+                AND clerkName = #{clerkName}
+            </if>
+            <if test="stockID != null">
+                AND stockID = #{stockID}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

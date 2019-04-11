@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.fxmisc.richtext.CodeArea?>
+<?import ui.common.bigPane.*?>
+        <?import javafx.scene.layout.StackPane?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextArea?>
+<?import org.fxmisc.richtext.InlineCssTextArea?>
+<fx:root fx:id="logPane" prefHeight="560.0" prefWidth="640.0" style="-fx-background-color: transparent;" type="GatePane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <JFXScrollPane layoutX="10" layoutY="10" prefHeight="540" prefWidth="620">
+        <bottomBar>
+            <children>
+                <Label style="-fx-text-fill:WHITE; -fx-font-size: 30;">
+                    记录
+                    <StackPane.alignment>CENTER_LEFT</StackPane.alignment>
+                    <StackPane.margin>
+                        <Insets>
+                            <left>
+                                520
+                            </left>
+                        </Insets>
+                    </StackPane.margin>
+                </Label>
+            </children>
+        </bottomBar>
+        <content>
+            <StackPane style="-fx-padding:10;">
+               <InlineCssTextArea  prefHeight="320" fx:id="textArea" editable="false" style="-fx-font-size: 13"/>
+            </StackPane>
+        </content>
+
+
+    </JFXScrollPane>
+</fx:root>

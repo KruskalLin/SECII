@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import ui.common.popupList.PopUpListLabel?>
+<fx:root fx:id="myModifyGoodsClassificationLabel" type="PopUpListLabel"
+         xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         stylesheets="@../../css/popup.css">
+    分类
+    <graphic>
+        <StackPane styleClass="custom-jfx-list-view-icon-container">
+            <MaterialDesignIconView glyphName="PENCIL" size="1.5em"
+                                    styleClass="custom-jfx-list-view-icon"/>
+        </StackPane>
+    </graphic>
+</fx:root>

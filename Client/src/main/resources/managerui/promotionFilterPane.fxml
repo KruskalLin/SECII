@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<fx:root type="AnchorPane" prefHeight="250" prefWidth="230.0" xmlns="http://javafx.com/javafx/8.0.121"
+         xmlns:fx="http://javafx.com/fxml/1">
+    <Label layoutX="20" layoutY="12" text="选择促销种类">
+        <font>
+            <Font size="14"/>
+        </font>
+    </Label>
+
+    <JFXCheckBox fx:id="memberBox" text="会员促销" layoutX="20" layoutY="35"/>
+    <JFXCheckBox fx:id="combineBox" text="组合商品" layoutX="125" layoutY="35"/>
+    <JFXCheckBox fx:id="totalBox" text="总价促销" layoutX="20" layoutY="60"/>
+
+
+    <Label layoutX="20" layoutY="100" text="选择时间范围">
+        <font>
+            <Font size="14"/>
+        </font>
+    </Label>
+
+    <Label text="开始" layoutX="20" layoutY="127"/>
+    <JFXDatePicker fx:id="beginTime" layoutX="56" layoutY="120" prefWidth="150"/>
+    <Label text="结束" layoutX="20" layoutY="167"/>
+    <JFXDatePicker fx:id="endTime" layoutX="56" layoutY="160" prefWidth="150"/>
+
+
+    <JFXButton fx:id="select" text="选择" layoutX="90" layoutY="210"
+               style="-fx-background-color: #03A9F4" textFill="white"/>
+</fx:root>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.InventoryGiftReceiptPOMapper">
+    <resultMap id="resultMap" type="po.receiptPO.InventoryGiftReceiptPO">
+        <result typeHandler="MyJsonHandler" column="goodsList" property="goodsList" />
+    </resultMap>
+
+    <select id="getDayId" resultType="int">
+        select max(dayId)+1 from inventorygiftreceipt where createTime &gt;= #{today}
+    </select>
+    <insert id="insert">
+        insert into inventorygiftreceipt(dayId, operatorId, createTime, lastModifiedTime, receiptState, clerkName,  goodsList, comment)
+        values(#{dayId}, #{operatorId}, #{createTime}, #{lastModifiedTime}, #{receiptState}, #{clerkName}, #{goodsList, typeHandler=MyJsonHandler},  #{comment})
+    </insert>
+    <update id="update">
+        update inventorygiftreceipt set lastModifiedTime=#{lastModifiedTime}, receiptState=#{receiptState}, operatorId=#{operatorId}, goodsList=#{goodsList, typeHandler=MyJsonHandler},  comment=#{comment}
+        where dayId=#{dayId} and createTime=#{createTime}
+    </update>
+    <delete id="delete">
+        delete from inventorygiftreceipt where dayId=#{dayId} and createTime=#{createTime}
+    </delete>
+    <select id="selectBetween" resultMap="resultMap">
+        select * from inventorygiftreceipt where createTime &gt;= #{begin} and createTime &lt;= #{end}
+    </select>
+    <select id="selectByState" resultMap="resultMap">
+        select * from inventorygiftreceipt where receiptState=#{receiptState}
+    </select>
+
+    <select id="searchForBusiness" resultMap="resultMap">
+        select * from inventorygiftreceipt
+        <where>
+            <if test="memberId != null">
+                clientID=#{memberId}
+            </if>
+            <if test="clerkName != null">
+                AND clerkName=#{clerkName}
+            </if>
+            <if test="stockName != null">
+                AND stockName=#{stockName}
+            </if>
+            <if test="begin != null">
+                AND createTime &gt;= #{begin}
+            </if>
+            <if test="end != null">
+                AND createTime &lt;= #{end}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectByMold" resultMap="resultMap">
+        select * from inventorygiftreceipt where dayId=#{dayId} and createTime=#{createTime}
+    </select>
+
+    <select id="search" resultMap="resultMap">
+        select * from inventorygiftreceipt
+        <where>
+            <if test="operatorId != null">
+                operatorId=#{operatorId}
+            </if>
+            <if test="dayId != null">
+                AND dayId=#{dayId}
+            </if>
+            <if test="receiptState != null">
+                AND receiptState=#{receiptState}
+            </if>
+            <if test="createTimeFloor != null">
+                AND createTime &gt;= #{createTimeFloor}
+            </if>
+            <if test="createTimeCeil != null">
+                AND createTime &lt;= #{createTimeCeil}
+            </if>
+            <if test="lastModifiedTimeFloor != null">
+                AND lastModifiedTime &gt;= #{lastModifiedTimeFloor}
+            </if>
+            <if test="lastModifiedTimeCeil != null">
+                AND lastModifiedTime &lt;= #{lastModifiedTimeCeil}
+            </if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.AccountInitialPOMapper">
+
+    <insert id="initialAccount">
+        insert into initialaccount(year,id,name,balance)
+        select #{year},id,name,balance
+        from account
+    </insert>
+
+    <insert id="initialMember">
+        insert into initialmember(year,memberId,memberCategory,VIPgrade ,memberName ,clerkName ,phoneNumber ,address ,zipCode,emailAddress ,debtCeiling ,debt,credit,isDeleted,COMMENT)
+        select #{year},memberId,memberCategory,VIPgrade ,memberName ,clerkName ,phoneNumber ,address ,zipCode,emailAddress ,debtCeiling ,debt,credit,isDeleted,COMMENT
+        from member
+    </insert>
+
+    <insert id="initialGoods">
+        insert into initialgoods(year,id,goodName,goodType,classifyId,inventoryNum,purPrice,salePrice,recentPurPrice,recentSalePrice,alarmNumber)
+        select #{year},id,goodName,goodType,classifyId,inventoryNum,purPrice,salePrice,recentPurPrice,recentSalePrice,alarmNumber
+        from goods
+    </insert>
+
+
+    <resultMap id="resultMap1" type="po.AccountInitialPO.InitialGoodsPO">
+        <result column="year" property="year"/>
+    </resultMap>
+    <select id="showGoods" resultMap="resultMap1">
+        select * from initialgoods where year = #{year}
+    </select>
+
+
+    <resultMap id="resultMap2" type="po.AccountInitialPO.InitialAccountPO">
+        <result column="year" property="year"/>
+    </resultMap>
+    <select id="showAccount" resultMap="resultMap2">
+        select * from initialaccount where year = #{year}
+    </select>
+
+    <resultMap id="resultMap3" type="po.AccountInitialPO.InitialMemberPO">
+        <result column="year" property="year"/>
+    </resultMap>
+    <select id="showMember" resultMap="resultMap3">
+        select * from initialmember where year = #{year}
+    </select>
+
+</mapper>

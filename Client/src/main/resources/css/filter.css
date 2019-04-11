@@ -1,0 +1,42 @@
+
+.custom-jfx-list-view-icon-container {
+    -fx-pref-width: 40px;
+}
+
+.custom-jfx-list-view-icon,
+.jfx-list-cell:selected .label .custom-jfx-list-view-icon {
+    /*-fx-text-fill: #5264AE;*/
+    -fx-fill: #5264AE;
+    -fx-padding: 0.0 10.0 0.0 5.0;
+    -fx-cursor: hand;
+}
+
+
+.combo-box-popup .list-view .jfx-list-cell .label,
+.combo-box-popup .list-view .jfx-list-cell:filled:hover .label {
+    -fx-text-fill: BLACK;
+}
+
+.combo-box-popup .list-view .jfx-list-cell .custom-jfx-list-view-icon,
+.combo-box-popup .list-view .jfx-list-cell:filled:hover .custom-jfx-list-view-icon,
+.combo-box-popup .list-view .jfx-list-cell:selected .custom-jfx-list-view-icon {
+    -fx-fill: #5264AE;
+}
+
+.combo-box-popup .list-view .jfx-list-cell:odd:selected > .jfx-rippler > StackPane,
+.combo-box-popup .list-view .jfx-list-cell:even:selected > .jfx-rippler > StackPane {
+    -fx-background-color: rgba(0.0, 0.0, 255.0, 0.2);
+}
+
+.combo-box-popup .list-view .jfx-list-cell {
+    -fx-background-insets: 0.0;
+}
+
+.combo-box-popup .list-view .jfx-list-cell:odd,
+.combo-box-popup .list-view .jfx-list-cell:even {
+    -fx-background-color: WHITE;
+}
+
+.combo-box-popup .list-view .jfx-list-cell .jfx-rippler {
+    -jfx-rippler-fill: #5264AE;
+}

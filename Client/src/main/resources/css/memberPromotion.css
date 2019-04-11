@@ -1,0 +1,21 @@
+
+.custom-jfx-progress-bar > .bar {
+    -fx-pref-height: 17;
+    -fx-background-color: linear-gradient(to right bottom,rgb(202,97,156),rgb(245,203,158));
+    -fx-background-radius: 10;
+}
+.custom-jfx-progress-bar > .track{
+    -fx-background-radius: 10;
+}
+
+.custom-jfx-progress-bar > .secondary-bar{
+    -fx-background-color: rgba(255, 135, 21, 0.18);
+}
+
+.custom-jfx-progress-bar-stroke > .bar {
+    -fx-background-color: #5264AE;
+    -fx-padding: 6;
+}
+.myLabel{
+    -fx-text-fill: white;
+}

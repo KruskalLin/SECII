@@ -1,0 +1,16 @@
+.circleindicator-container  {
+    circleindicator-color:linear-gradient(to right bottom,rgb(253,139,166),rgb(199,146,245));
+    -fx-padding: 3.0;
+    -fx-background-color: transparent;
+}
+.circleindicator-container > .circleindicator-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 2em;
+    -fx-text-fill: #009383;
+    -fx-padding: 7.0;
+}
+.label{
+    -fx-font-weight: bold;
+    -fx-text-fill: #009383;
+    -fx-padding: 10.0;
+}

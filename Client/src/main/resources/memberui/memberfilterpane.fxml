@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="144.0" prefWidth="121.0" stylesheets="@../css/filter.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <JFXButton fx:id="save" layoutX="39.0" layoutY="119.0" onMouseClicked="#save" style="-fx-background-color: #03A9F4" text="保存" textFill="WHITE" />
+        <JFXComboBox fx:id="state" layoutX="14.0" layoutY="66.0" prefHeight="23.0" prefWidth="93.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <Label fx:id="Seller">
+                        进货商
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <MaterialDesignIconView glyphName="PAUSE_CIRCLE_OUTLINE" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                            </StackPane>
+                        </graphic>
+                    </Label>
+                    <Label fx:id="Supplier">
+                        供货商
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <MaterialIconView glyphName="REMOVE" size="1.5em" styleClass="custom-jfx-list-view-icon" />
+                            </StackPane>
+                        </graphic>
+                    </Label>
+                </FXCollections>
+            </items>
+        </JFXComboBox>
+      <JFXTextField fx:id="degree" alignment="CENTER" layoutX="64.0" layoutY="21.0" prefHeight="23.0" prefWidth="43.0" />
+      <Label layoutX="17.0" layoutY="25.0" text="VIP等级" textFill="#aeadbc">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Separator layoutX="18.0" layoutY="54.0" prefHeight="2.0" prefWidth="93.0" />
+
+    </children>
+</fx:root>
